@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secreto oculto en el Test del Malvavisco</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      background: #fff;
+      color: #1c1e21;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ââ VIDEO ââ */
+    .video-wrap {
+      width: 640px;
+      max-width: 100%;
+      margin: 0 auto 32px;
+      padding-top: 16px;
+    }
+
+    /* ââ DIVIDER ââ */
+    .divider {
+      border: none;
+      border-top: 1px solid #dadde1;
+      margin: 8px 0 28px;
+    }
+
+    /* ââ COMMENTS ââ */
+    .comments { padding-bottom: 8px; }
+
+    .comment {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 12px;
+      align-items: flex-start;
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      background: #d0d2d6;
+    }
+
+    .c-body { flex: 1; min-width: 0; }
+
+    .c-name {
+      font-family: Helvetica, Arial, sans-serif;
+      font-weight: 600;
+      color: rgb(56, 88, 152);
+      font-size: 14px;
+      cursor: pointer;
+      display: inline-block;
+    }
+
+    .c-text {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      line-height: 19.12px;
+      color: rgb(28, 30, 33);
+      margin-top: 4px;
+    }
+
+    .c-meta {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0;
+      margin-top: 4px;
+      font-size: 12px;
+    }
+
+    .c-meta .action {
+      font-family: Helvetica, Arial, sans-serif;
+      color: rgb(66, 103, 178);
+      font-weight: 400;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    .c-meta .action:hover { text-decoration: underline; }
+
+    .dot {
+      color: rgb(66, 103, 178);
+      font-size: 12px;
+      margin: 0 4px;
+    }
+
+    .likes {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      color: rgb(28, 30, 33);
+      font-family: Helvetica, Arial, sans-serif;
+    }
+
+    .like-icon {
+      width: 14px;
+      height: 14px;
+      display: inline-block;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+
+    .c-time {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 12px;
+      color: rgb(66, 103, 178);
+    }
+
+    .replies {
+      margin-top: 8px;
+      margin-left: 54px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .reply {
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+
+    .reply .avatar { width: 36px; height: 36px; }
+
+    /* ââ REFERENCIAS ââ */
+    .refs {
+      border-top: 1px solid #dadde1;
+      padding: 24px 0 48px;
+      margin-top: 8px;
+    }
+
+    .refs h2 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #000;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #000;
+      display: inline-block;
+    }
+
+    .ref-list { list-style: none; }
+
+    .ref-item {
+      font-size: 13px;
+      line-height: 1.7;
+      color: #333;
+      padding: 10px 12px;
+      border-left: 3px solid #e0e0e0;
+      margin-bottom: 10px;
+      background: #fafafa;
+    }
+
+    .ref-item.italic-ref {
+      font-style: italic;
+      color: #4a4a4a;
+      background: #fff;
+      border-left-color: #ccc;
+    }
+
+    .ref-hidden { display: none; }
+
+    .btn-toggle {
+      background: none;
+      border: none;
+      color: #1877f2;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 6px 0;
+      margin-top: 4px;
+      font-family: inherit;
+    }
+    .btn-toggle:hover { text-decoration: underline; }
+
+    /* ââ RESPONSIVIDADE ââ */
+    @media (max-width: 640px) {
+      .replies { margin-left: 32px; }
+    }
+
+    @media (max-width: 480px) {
+      .container { padding: 0 14px; }
+      .c-text { font-size: 13px; }
+      .ref-item { font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ââ VIDEO ââ -->
+  <div class="video-wrap">
+    <vturb-smartplayer id="vid-69d073739a320eec0638e441" style="display: block; margin: 0 auto; width: 100%;"></vturb-smartplayer>
+    <script type="text/javascript">
+      var s=document.createElement("script");
+      s.src="https://scripts.converteai.net/ed40d196-cbd6-4c9a-84f7-04b94209eac1/players/69d073739a320eec0638e441/v4/player.js";
+      s.async=!0;
+      document.head.appendChild(s);
+    </script>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ââ COMENTÃRIOS ââ -->
+  <div class="comments">
+
+    <!-- 1 Â· Carlos Rodriguez -->
+    <div class="comment">
+      <img class="avatar" src="https://media.atomicatpages.net/u/ALg4g9ESkMSs0JccelZ1IzVZqlk1/Pictures/SQoIzL8270353.jpeg" alt="Carlos Rodriguez">
+      <div class="c-body">
+        <span class="c-name">Carlos Rodriguez</span>
+        <p class="c-text">Estaba a punto de cerrar la pÃ¡gina, pero la doctora fue tan directa que me quedÃ©. La explicaciÃ³n sobre la verdadera causa del problema me dejÃ³ pensando. Anoche, por primera vez en aÃ±os, mi hijo terminÃ³ sus deberes sin una sola lÃ¡grima. No se salten la parte donde explica por quÃ© no es su culpa.</p>
+        <div class="c-meta">
+          <span class="action">Me gusta</span><span class="dot">Â·</span>
+          <span class="action">Responder</span><span class="dot">Â·</span>
+          <span class="likes"><img class="like-icon" src="https://media.atomicatpages.net/p/fblike.webp" alt="like"> 74</span><span class="dot">Â·</span>
+          <span class="c-time">1 h</span>
+        </div>
+        <div class="replies">
+          <div class="reply">
+            <img class="avatar" src="https://media.atomicatpages.net/u/ALg4g9ESkMSs0JccelZ1IzVZqlk1/Pictures/KDqsXf8270353.jpeg" alt="Andrea F.">
+            <div class="c-body">
+              <span class="c-name">Andrea F.</span>
+              <p class="c-text">Me pasaba lo mismo con mi hijo, las tareas eran una pesadilla hasta que vi este vÃ­deo...</p>
+              <div class="c-meta">
+                <span class="action">Me gusta</span><span class="dot">Â·</span>
+                <span class="action">Responder</span><span class="dot">Â·</span>
+                <span class="likes"><img class="like-icon" src="https://media.atomicatpages.net/p/fblike.webp" alt="like"> 26</span><span class="dot">Â·</span>
+                <span class="c-time">45 m</span>
+              </div>
+            </div>
+          </div>
+          <div class="reply">
+            <img class="avatar" src="https://media.atomicatpages.net/u/ALg4g9ESkMSs0JccelZ1IzVZqlk1/Pictures/mbvDLg9765833.jpeg" alt="Patricia Gomez">
+            <div class="c-body">
+              <span class="c-name">Patricia Gomez</span>
+              <p class="c-text">La verdad es increÃ­ble el mÃ©todo de la Dra. Navarro, ademÃ¡s explica desde su experiencia como madre. VÃ©anlo hasta el final, deja todo muy claro.</p>
+              <div class="c-meta">
+                <span class="action">Me gusta</span><span class="dot">Â·</span>
+                <span class="action">Responder</span><span class="dot">Â·</span>
+                <span class="likes"><img class="like-icon" src="https://media.atomicatpages.net/p/fblike.webp" alt="like"> 15</span><span class="dot">Â·</span>
+                <span class="c-time">1 h</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2 Â· Monica Quispe -->
+    <div class="comment">
+      <img class="avatar" src="https://media.atomicatpages.net/u/ALg4g9ESkMSs0JccelZ1IzVZqlk1/Pictures/kuGtvM9127088.jpeg" alt="Monica Quispe">
+      <div class="c-body">
+        <span class="c-name">Monica Quispe</span>
+        <p class="c-text">Mi pediatra dijo que era "cosa de niÃ±os" y que ya "madurarÃ­a". Este video es lo primero que me da esperanza. La forma en que explica por quÃ© todo lo demÃ¡s falla tiene mucho sentido. Llevo una semana probando lo que dice y siento que la casa estÃ¡ mÃ¡s en calma. Vale la pena verlo completo.</p>
+        <div class="c-meta">
+          <span class="action">Me gusta</span><span class="dot">Â·</span>
+          <span class="action">Responder</span><span class="dot">Â·</span>
+          <span class="likes"><img class="like-icon" src="https://media.atomicatpages.net/p/fblike.webp" alt="like"> 35</span><span class="dot">Â·</span>
+          <span class="c-time">2 h</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 Â· Luis Francisco -->
+    <div class="comment">
+      <img class="avatar" src="https://media.atomicatpages.net/u/ALg4g9ESkMSs0JccelZ1IzVZqlk1/Pictures/kELBkf8270353.jpeg" alt="Luis Francisco">
+      <div class="c-body">
+        <span class="c-name">Luis Francisco</span>
+        <p class="c-text">Muchas graciasss, a mi hijo tambiÃ©n le estÃ¡ sirviendo, hace 3 dÃ­as que no recibo una queja del colegio ð</p>
+        <div class="c-meta">
+          <span class="action">Me gusta</span><span class="dot">Â·</span>
+          <span class="action">Responder</span><span class="dot">Â·</span>
+          <span class="likes"><img class="like-icon" src="https://media.atomicatpages.net/p/fblike.webp" alt="like"> 8</span><span class="dot">Â·</span>
+          <span class="c-time">30 m</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 Â· Elena V. -->
+    <div class="comment">
+      <img class="avatar" src="https://media.atomicatpages.net/u/ALg4g9ESkMSs0JccelZ1IzVZqlk1/Pictures/YrfyMA8270353.jpeg" alt="Elena V.">
+      <div class="c-body">
+        <span class="c-name">Elena V.</span>
+        <p class="c-text">Totalmente de acuerdo. Yo tambiÃ©n estaba harta de que me dijeran "es falta de disciplina" o "necesita mÃ¡s mano dura". AquÃ­ por fin explican el porquÃ© real. Se siente un alivio enorme.</p>
+        <div class="c-meta">
+          <span class="action">Me gusta</span><span class="dot">Â·</span>
+          <span class="action">Responder</span><span class="dot">Â·</span>
+          <span class="likes"><img class="like-icon" src="https://media.atomicatpages.net/p/fblike.webp" alt="like"> 15</span><span class="dot">Â·</span>
+          <span class="c-time">1 h</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5 Â· Jorge -->
+    <div class="comment">
+      <img class="avatar" src="https://media.atomicatpages.net/u/ALg4g9ESkMSs0JccelZ1IzVZqlk1/Pictures/EygIKf8270353.jpeg" alt="Jorge">
+      <div class="c-body">
+        <span class="c-name">Jorge</span>
+        <p class="c-text">HabÃ­amos probado de todo y nada funcionaba, pensÃ© que esto serÃ­a mÃ¡s de lo mismo. Pero el mÃ©todo de la doctora es increÃ­blemente simple de aplicar. Las rabietas que eran de todos los dÃ­as han bajado mucho. Incluso veo a mi esposa mÃ¡s tranquila. Si ya perdiste la fe, dale una oportunidad.</p>
+        <div class="c-meta">
+          <span class="action">Me gusta</span><span class="dot">Â·</span>
+          <span class="action">Responder</span><span class="dot">Â·</span>
+          <span class="likes"><img class="like-icon" src="https://media.atomicatpages.net/p/fblike.webp" alt="like"> 22</span><span class="dot">Â·</span>
+          <span class="c-time">4 h</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6 Â· Roberto Martinez -->
+    <div class="comment">
+      <img class="avatar" src="https://media.atomicatpages.net/u/ALg4g9ESkMSs0JccelZ1IzVZqlk1/Pictures/CnJGbE0658975.jpeg" alt="Roberto Martinez">
+      <div class="c-body">
+        <span class="c-name">Roberto Martinez</span>
+        <p class="c-text">Yo igual que Jorge, probÃ© de todo. Terapeutas, psicÃ³logos, libros... dinero tirado a la basura. Esto es lo Ãºnico que nos ha dado un respiro de verdad.</p>
+        <div class="c-meta">
+          <span class="action">Me gusta</span><span class="dot">Â·</span>
+          <span class="action">Responder</span><span class="dot">Â·</span>
+          <span class="likes"><img class="like-icon" src="https://media.atomicatpages.net/p/fblike.webp" alt="like"> 15</span><span class="dot">Â·</span>
+          <span class="c-time">1 h</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7 Â· Isabel M. -->
+    <div class="comment">
+      <img class="avatar" src="https://media.atomicatpages.net/u/ALg4g9ESkMSs0JccelZ1IzVZqlk1/Pictures/cnxogC0122188.jpeg" alt="Isabel M.">
+      <div class="c-body">
+        <span class="c-name">Isabel M.</span>
+        <p class="c-text">El caos constante estaba generando una ansiedad terrible en mi hijo (y en mi). Este video fue un alivio. La doctora explica el origen real del problema y te quita un peso de encima. Ahora entiendo a mi hijo y estoy mÃ¡s tranquila. No cierren la pÃ¡gina, la informaciÃ³n es oro.</p>
+        <div class="c-meta">
+          <span class="action">Me gusta</span><span class="dot">Â·</span>
+          <span class="action">Responder</span><span class="dot">Â·</span>
+          <span class="likes"><img class="like-icon" src="https://media.atomicatpages.net/p/fblike.webp" alt="like"> 13</span><span class="dot">Â·</span>
+          <span class="c-time">12 h</span>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /comments -->
+
+  <!-- ââ REFERENCIAS CIENTÃFICAS ââ -->
+  <div class="refs">
+    <h2>Referencias CientÃ­ficas</h2>
+    <ul class="ref-list">
+      <li class="ref-item">
+        1 - GutiÃ©rrez-Zotes, A., et al. (2022). Association of In Vivo Locus Coeruleus Imaging With Symptoms and Cognition in Adults With ADHD. <em>JAMA Psychiatry</em>, 79(9), 907â916. https:doi.org/10.1001/jamapsychiatry.2022.2031
+      </li>
+      <li class="ref-item italic-ref">
+        2 - Sara, S. J. (2009). The locus coeruleus and noradrenergic modulation of cognition. <em>Nature Reviews Neuroscience</em>, 10(3), 211â223. https:doi.org/10.1038/nrn2573
+      </li>
+      <li class="ref-item">
+        3 - Moffitt, T.E., et al. (2011). A gradient of childhood self-control predicts health, wealth, and public safety. <em>Proceedings of the National Academy of Sciences</em>, 108(7), 2693â2698. https:doi.org/10.1073/pnas.1010076108
+      </li>
+      <li class="ref-item italic-ref">
+        4 - Shoda, Y., Mischel, W., &amp; Peake, P.K. (1990). Predicting adolescent cognitive and self-regulatory competencies from preschool delay of gratification: Identifying diagnostic conditions. <em>Developmental Psychology</em>, 26(6), 978â986. https:doi.org/10.1037/0012-1649.26.6.978
+      </li>
+      <li class="ref-item ref-hidden">
+        5 - Chaieb, L, et al. (2015). Auditory Beat Stimulation and its Effects on Cognition and Mood States. <em>Frontiers in Psychiatry</em>, 6. https:doi.org/10.3389/fpsyt.2015.00070
+      </li>
+      <li class="ref-item italic-ref ref-hidden">
+        6 - Katzman, M.A., et al. (2017). Adult ADHD and comorbid disorders: clinical implications of a dimensional approach. <em>BMC Psychiatry</em>, 17(1). https:doi.org/10.1186/s12888-017-1473-2
+      </li>
+    </ul>
+    <button class="btn-toggle" id="toggleBtn" onclick="toggleRefs()">Leer mÃ¡s</button>
+  </div>
+
+</div><!-- /container -->
+
+<script>
+  function toggleRefs() {
+    const hidden = document.querySelectorAll('.ref-hidden');
+    const btn = document.getElementById('toggleBtn');
+    const isHidden = window.getComputedStyle(hidden[0]).display === 'none';
+    hidden.forEach(el => el.style.display = isHidden ? 'block' : 'none');
+    btn.textContent = isHidden ? 'Leer menos' : 'Leer mÃ¡s';
+  }
+</script>
+</body>
+</html>
